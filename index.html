@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIFESTYLE STUDIO · Premium Yoga</title>
+  <meta name="description" content="Find your balance at LIFESTYLE STUDIO. Premium yoga, meditation & wellness in Bhandup West. Free trial, all ages.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ── reset & base ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #fcfaf7;
+      color: #1e2e2a;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    :root {
+      --gold: #c9a87c;
+      --gold-light: #e3d3b8;
+      --sage: #b7c9b2;
+      --beige: #f5f0e8;
+      --shadow: 0 20px 40px -12px rgba(0,20,10,0.15);
+      --radius: 28px;
+      --glass: rgba(255, 252, 248, 0.75);
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    /* ── header ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(255, 252, 248, 0.85);
+      border-bottom: 1px solid rgba(183, 201, 178, 0.25);
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .logo-icon {
+      background: #1e3d34;
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 8px 16px rgba(30, 61, 52, 0.2);
+      flex-shrink: 0;
+    }
+    .logo-text {
+      background: linear-gradient(135deg, #1e3d34, #3a5e4c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+      color: #1e2e2a;
+      white-space: nowrap;
+    }
+    nav a:hover { border-bottom-color: var(--gold); }
+    .nav-cta {
+      background: #1e3d34;
+      color: #fff !important;
+      padding: 8px 22px;
+      border-radius: 60px;
+      border-bottom: none !important;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .nav-cta:hover {
+      background: #2b5446;
+      transform: scale(1.03);
+      color: #fff !important;
+    }
+
+    /* ── hero ── */
+    .hero { padding-top: 40px; padding-bottom: 60px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-text { padding-right: 10px; }
+    .hero-text .rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      color: #3b4f47;
+    }
+    .hero-text .rating span { color: var(--gold); font-weight: 600; }
+    .hero-text h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      color: #15231e;
+    }
+    .hero-text h1 .gold { color: var(--gold); }
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #3b4f47;
+      margin: 20px 0 28px;
+      max-width: 480px;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 34px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.25s;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .btn-primary {
+      background: #1e3d34;
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #2d5748;
+      transform: translateY(-3px);
+      box-shadow: 0 16px 30px rgba(30, 61, 52, 0.25);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #1e3d34;
+      color: #1e3d34;
+    }
+    .btn-outline:hover {
+      background: #1e3d34;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+    .hero-stats {
+      display: flex;
+      gap: 36px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .hero-stats .stat { font-size: 2rem; font-weight: 700; color: #1e3d34; }
+    .hero-stats .label { font-size: 1rem; color: #3b4f47; }
+
+    /* ── collage ── */
+    .hero-collage {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .collage-main {
+      grid-row: 1 / 3;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 30px 50px -20px rgba(0, 20, 0, 0.25);
+      transition: 0.4s ease;
+    }
+    .collage-main:hover { transform: scale(1.01); }
+    .collage-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+    .collage-main:hover img { transform: scale(1.05); }
+    .collage-side {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .collage-side img {
+      width: 100%;
+      aspect-ratio: 1 / 0.9;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
+      transition: 0.3s ease;
+    }
+    .collage-side img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 28px 40px -16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ── floating buttons ── */
+    .float-wa,
+    .float-call {
+      position: fixed;
+      right: 28px;
+      z-index: 999;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      color: #fff;
+      transition: 0.2s;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+    .float-wa {
+      bottom: 28px;
+      background: #25d366;
+    }
+    .float-call {
+      bottom: 100px;
+      background: #1e3d34;
+    }
+    .float-wa:hover,
+    .float-call:hover { transform: scale(1.08); }
+
+    /* ── sections ── */
+    section { padding: 70px 0; }
+    .section-title {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: #15231e;
+      margin-bottom: 12px;
+    }
+    .section-title .gold { color: var(--gold); }
+    .section-sub {
+      font-size: 1.1rem;
+      color: #3f5a4f;
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+
+    /* ── cards ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 28px;
+    }
+    .glass-card {
+      background: var(--glass);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 240, 0.5);
+      border-radius: var(--radius);
+      padding: 28px 16px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: 0.25s;
+    }
+    .glass-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 50px -18px rgba(0, 20, 0, 0.2);
+    }
+    .glass-card i {
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .glass-card h4 { font-size: 1.1rem; font-weight: 600; }
+
+    /* ── pricing ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 24px;
+    }
+    .pricing-card {
+      background: #fff;
+      border-radius: 40px;
+      padding: 28px 16px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid #edf0eb;
+      transition: 0.3s;
+    }
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+    }
+    .pricing-card .price {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #1e3d34;
+    }
+    .pricing-card .price small {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #4f6b5e;
+    }
+
+    /* ── trainers ── */
+    .trainer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 28px;
+      margin-top: 20px;
+    }
+    .trainer-card {
+      background: #fff;
+      border-radius: 40px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .trainer-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 12px;
+      border: 4px solid var(--gold-light);
+    }
+    .trainer-card h4 { font-weight: 600; font-size: 1.1rem; }
+    .trainer-card p { font-size: 0.9rem; color: #4f6b5e; }
+
+    /* ── gallery ── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      transition: 0.3s;
+    }
+    .gallery-grid img:hover { transform: scale(1.03); }
+    .gallery-grid .tall { height: 280px; }
+
+    /* ── testimonials ── */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: #fff;
+      border-radius: 30px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .testimonial-card .stars {
+      color: var(--gold);
+      letter-spacing: 2px;
+      font-size: 1.1rem;
+    }
+
+    /* ── contact ── */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 40px;
+      border: 1px solid #dce4da;
+      background: #fff;
+      font-size: 1rem;
+      margin-bottom: 14px;
+      font-family: inherit;
+    }
+    .contact-form textarea { border-radius: 24px; resize: vertical; }
+    .contact-form button { width: 100%; justify-content: center; }
+
+    /* ── faq ── */
+    .faq-list {
+      display: grid;
+      gap: 14px;
+      max-width: 720px;
+    }
+    .faq-list div {
+      padding: 12px 0;
+      border-bottom: 1px solid #e2e8e0;
+    }
+    .faq-list strong { font-weight: 600; color: #1e3d34; }
+
+    /* ── footer ── */
+    footer {
+      background: #e6ede3;
+      padding: 44px 0 20px;
+      border-radius: 40px 40px 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 30px;
+    }
+    .footer-social i {
+      font-size: 1.6rem;
+      margin-right: 14px;
+      color: #1e3d34;
+      transition: 0.2s;
+    }
+    .footer-social i:hover { color: var(--gold); }
+    .footer-copy {
+      text-align: center;
+      border-top: 1px solid #cbd8c5;
+      padding-top: 24px;
+      margin-top: 30px;
+      font-size: 0.95rem;
+      color: #3b4f47;
+    }
+
+    /* ── back to top ── */
+    .back-top {
+      position: fixed;
+      bottom: 170px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow);
+      z-index: 999;
+      opacity: 0;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .back-top.show { opacity: 1; }
+
+    /* ── responsive ── */
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-text { padding-right: 0; }
+      .contact-wrap { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .header-inner { flex-direction: column; align-items: stretch; }
+      nav {
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      nav a { font-size: 0.85rem; }
+      .hero-collage { grid-template-columns: 1fr; }
+      .collage-main { grid-row: auto; }
+      .collage-side { flex-direction: row; flex-wrap: wrap; }
+      .collage-side img { flex: 1; min-width: 100px; aspect-ratio: 1/0.8; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid img { height: 170px; }
+      .gallery-grid .tall { height: 200px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .float-wa,
+      .float-call { width: 50px; height: 50px; font-size: 24px; }
+      .float-call { bottom: 88px; }
+      .hero-stats .stat { font-size: 1.6rem; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .hero-text h1 { font-size: 2rem; }
+      .hero { padding: 20px 0 30px; }
+      section { padding: 40px 0; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-grid img { height: 200px; }
+      .gallery-grid .tall { height: 220px; }
+      .btn { padding: 12px 22px; font-size: 0.9rem; }
+      .section-title { font-size: 2rem; }
+    }
+
+    /* ── animations ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-icon"><i class="fas fa-leaf"></i></span>
+        <span class="logo-text">LIFESTYLE STUDIO</span>
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#classes">Classes</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-cta"><i class="fas fa-calendar-check"></i> Book Trial</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section id="home" class="hero container">
+    <div class="hero-grid">
+      <div class="hero-text fade-up">
+        <div class="rating">
+          <span>⭐ 4.2</span> (5 Reviews) · Bhandup West
+        </div>
+        <h1>
+          Find Your Balance.<br>
+          <span class="gold">Build Your Strength.</span><br>
+          Live Better.
+        </h1>
+        <p>Premium Yoga, Meditation &amp; Wellness in Bhandup West for all ages.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn btn-primary"><i class="fas fa-calendar-plus"></i> Free Trial</a>
+          <a href="tel:+919820170745" class="btn btn-outline"><i class="fas fa-phone-alt"></i> Call Now</a>
+        </div>
+        <div class="hero-stats">
+          <div><span class="stat" data-target="120">0</span><span class="label">+ Happy Students</span></div>
+          <div><span class="stat" data-target="10">0</span><span class="label">+ Certified Trainers</span></div>
+        </div>
+      </div>
+      <div class="hero-collage">
+        <div class="collage-main">
+          <img src="https://images.pexels.com/photos/8436551/pexels-photo-8436551.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yoga instructor in lotus pose" loading="lazy">
+        </div>
+        <div class="collage-side">
+          <img src="https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Group yoga class" loading="lazy">
+          <img src="https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Meditation namaste" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section id="about" class="container fade-up">
+    <h2 class="section-title">About <span class="gold">LIFESTYLE</span> Studio</h2>
+    <p class="section-sub">A peaceful sanctuary in Bhandup West offering Yoga, Meditation, Pranayama, and holistic wellness. Experience flexibility, stress relief, and a healthier you.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <div class="glass-card" style="flex:1; min-width:140px;"><i class="fas fa-spa"></i><h4>Yoga &amp; Meditation</h4></div>
+      <div class="glass-card" style="flex:1; min-width:140px;"><i class="fas fa-heartbeat"></i><h4>Stress Relief</h4></div>
+      <div class="glass-card" style="flex:1; min-width:140px;"><i class="fas fa-leaf"></i><h4>Pranayama</h4></div>
+    </div>
+  </section>
+
+  <!-- ═══ WHY CHOOSE ═══ -->
+  <section style="background: var(--beige);">
+    <div class="container fade-up">
+      <h2 class="section-title">Why <span class="gold">Choose Us</span></h2>
+      <div class="card-grid">
+        <div class="glass-card"><i class="fas fa-user-tie"></i><h4>Certified Trainer</h4></div>
+        <div class="glass-card"><i class="fas fa-user-check"></i><h4>Personal Attention</h4></div>
+        <div class="glass-card"><i class="fas fa-users"></i><h4>Small Batches</h4></div>
+        <div class="glass-card"><i class="fas fa-clock"></i><h4>Flexible Timings</h4></div>
+        <div class="glass-card"><i class="fas fa-rupee-sign"></i><h4>Affordable Fees</h4></div>
+        <div class="glass-card"><i class="fas fa-smile"></i><h4>Beginner Friendly</h4></div>
+        <div class="glass-card"><i class="fas fa-brain"></i><h4>Meditation</h4></div>
+        <div class="glass-card"><i class="fas fa-tree"></i><h4>Positive Environment</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CLASSES & TRAINERS ═══ -->
+  <section id="classes" class="container fade-up">
+    <h2 class="section-title">Yoga <span class="gold">Programs</span> &amp; Trainers</h2>
+    <div class="card-grid">
+      <div class="glass-card"><i class="fas fa-yin-yang"></i><h4>Hatha Yoga</h4></div>
+      <div class="glass-card"><i class="fas fa-bolt"></i><h4>Power Yoga</h4></div>
+      <div class="glass-card"><i class="fas fa-weight"></i><h4>Weight Loss</h4></div>
+      <div class="glass-card"><i class="fas fa-circle"></i><h4>Meditation</h4></div>
+      <div class="glass-card"><i class="fas fa-wind"></i><h4>Pranayama</h4></div>
+      <div class="glass-card"><i class="fas fa-user-plus"></i><h4>Senior Citizen</h4></div>
+      <div class="glass-card"><i class="fas fa-female"></i><h4>Ladies Batch</h4></div>
+      <div class="glass-card"><i class="fas fa-building"></i><h4>Corporate</h4></div>
+      <div class="glass-card"><i class="fas fa-user-graduate"></i><h4>Private</h4></div>
+      <div class="glass-card"><i class="fas fa-child"></i><h4>Beginner</h4></div>
+    </div>
+    <div style="margin-top: 44px;">
+      <h3 style="font-weight: 500; font-size: 1.4rem; margin-bottom: 16px;">Meet Our Trainers</h3>
+      <div class="trainer-grid">
+        <div class="trainer-card">
+          <img src="https://images.pexels.com/photos/4158290/pexels-photo-4158290.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Anita Sharma" loading="lazy">
+          <h4>Anita Sharma</h4>
+          <p>Hatha &amp; Meditation</p>
+        </div>
+        <div class="trainer-card">
+          <img src="https://images.pexels.com/photos/6646964/pexels-photo-6646964.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Rahul Nair" loading="lazy">
+          <h4>Rahul Nair</h4>
+          <p>Power Yoga</p>
+        </div>
+        <div class="trainer-card">
+          <img src="https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Priya Menon" loading="lazy">
+          <h4>Priya Menon</h4>
+          <p>Pranayama &amp; Wellness</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BENEFITS & PRICING ═══ -->
+  <section id="benefits" style="background: #f5f8f4;">
+    <div class="container fade-up">
+      <h2 class="section-title">Benefits <span class="gold">&amp; Pricing</span></h2>
+      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px;">
+        <div>
+          <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+            <div><i class="fas fa-bolt" style="color:var(--gold);"></i> Flexibility</div>
+            <div><i class="fas fa-heart" style="color:var(--gold);"></i> Reduce Stress</div>
+            <div><i class="fas fa-battery-full" style="color:var(--gold);"></i> Increase Energy</div>
+            <div><i class="fas fa-shield-virus" style="color:var(--gold);"></i> Immunity</div>
+            <div><i class="fas fa-weight" style="color:var(--gold);"></i> Weight Loss</div>
+            <div><i class="fas fa-moon" style="color:var(--gold);"></i> Better Sleep</div>
+            <div><i class="fas fa-apple-alt" style="color:var(--gold);"></i> Healthy Lifestyle</div>
+            <div><i class="fas fa-peace" style="color:var(--gold);"></i> Mental Peace</div>
+          </div>
+        </div>
+        <div class="pricing-grid">
+          <div class="pricing-card"><h4>Drop-in</h4><div class="price">₹500 <small>/class</small></div></div>
+          <div class="pricing-card"><h4>Monthly</h4><div class="price">₹3,999 <small>/mo</small></div></div>
+          <div class="pricing-card"><h4>Annual</h4><div class="price">₹29,999 <small>/yr</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GALLERY ═══ -->
+  <section id="gallery" class="container fade-up">
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yoga pose" loading="lazy" class="tall">
+      <img src="https://images.pexels.com/photos/8436551/pexels-photo-8436551.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Meditation" loading="lazy">
+      <img src="https://images.pexels.com/photos/3823021/pexels-photo-3823021.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Stretching" loading="lazy">
+      <img src="https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yoga class" loading="lazy" class="tall">
+      <img src="https://images.pexels.com/photos/1051838/pexels-photo-1051838.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Group yoga" loading="lazy">
+      <img src="https://images.pexels.com/photos/3759657/pexels-photo-3759657.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Meditation pose" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIALS ═══ -->
+  <section id="testimonials" style="background: var(--beige);">
+    <div class="container fade-up">
+      <h2 class="section-title">Testimonials</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Amazing studio! I feel stronger and calmer."</p>
+          <strong>– Priya S.</strong>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐</div>
+          <p>"Great teachers and peaceful atmosphere."</p>
+          <strong>– Rohan M.</strong>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Best yoga in Bhandup. Highly recommend!"</p>
+          <strong>– Anjali K.</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section id="faq" class="container fade-up">
+    <h2 class="section-title">FAQ</h2>
+    <div class="faq-list">
+      <div><strong>Who can join?</strong> Everyone – all ages and fitness levels.</div>
+      <div><strong>Do beginners need experience?</strong> Not at all. We welcome beginners.</div>
+      <div><strong>How long are classes?</strong> 60 to 90 minutes per session.</div>
+      <div><strong>What should I wear?</strong> Comfortable, breathable clothing.</div>
+      <div><strong>Is there a trial class?</strong> Yes! Book your free trial now.</div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section id="contact" style="background: #f5f0e8;">
+    <div class="container fade-up">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-wrap">
+        <div>
+          <p><i class="fas fa-phone-alt" style="color:var(--gold); width:24px;"></i> +91 9820170745</p>
+          <p><i class="fas fa-map-pin" style="color:var(--gold); width:24px;"></i> Shop No. 2, Neha Annexe, Below Sanjeevan Hospital, Bhandup West, Mumbai – 400078</p>
+          <div style="margin: 20px 0; border-radius: 20px; overflow: hidden; height: 200px;">
+            <iframe src="https://maps.google.com/maps?q=Shop%20No.%202%2C%20Neha%20Annexe%2C%20Below%20Sanjeevan%20Hospital%2C%20Bhandup%20West%2C%20Mumbai%20%E2%80%93%20400078&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <p><strong>Hours:</strong> Mon–Sat 6:30–8:30 AM, 5:30–7:30 PM</p>
+        </div>
+        <div class="contact-form">
+          <input type="text" placeholder="Your Name" aria-label="Name">
+          <input type="email" placeholder="Email" aria-label="Email">
+          <textarea rows="3" placeholder="Message..."></textarea>
+          <button class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="logo" style="font-size:1.4rem;">
+          <span class="logo-icon" style="width:38px;height:38px;font-size:1.1rem;"><i class="fas fa-leaf"></i></span>
+          <span class="logo-text">LIFESTYLE STUDIO</span>
+        </div>
+        <p style="margin: 10px 0; color: #3b4f47;">Peace • Balance • Wellness</p>
+      </div>
+      <div>
+        <h4 style="font-weight:600; margin-bottom:8px;">Quick</h4>
+        <a href="#home">Home</a><br>
+        <a href="#about">About</a><br>
+        <a href="#classes">Classes</a>
+      </div>
+      <div>
+        <h4 style="font-weight:600; margin-bottom:8px;">Visit</h4>
+        <p style="color:#3b4f47;">Shop No.2, Neha Annexe, Bhandup West</p>
+      </div>
+      <div>
+        <h4 style="font-weight:600; margin-bottom:8px;">Connect</h4>
+        <div class="footer-social">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-facebook"></i>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copy">© 2026 LIFESTYLE STUDIO · All rights reserved.</div>
+  </footer>
+
+  <!-- ═══ FLOATING ═══ -->
+  <a href="https://wa.me/919820170745" class="float-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+919820170745" class="float-call" aria-label="Call"><i class="fas fa-phone-alt"></i></a>
+  <button class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    (function() {
+      // ── scroll reveal ──
+      const faders = document.querySelectorAll('.fade-up');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.15 });
+      faders.forEach(el => observer.observe(el));
+
+      // ── counter animation ──
+      const counters = document.querySelectorAll('.stat');
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                el.textContent = target;
+                clearInterval(timer);
+              } else {
+                el.textContent = Math.floor(current);
+              }
+            }, 20);
+            counterObserver.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(c => counterObserver.observe(c));
+
+      // ── back to top ──
+      const backBtn = document.getElementById('backTop');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          backBtn.classList.add('show');
+        } else {
+          backBtn.classList.remove('show');
+        }
+      });
+      backBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+
+</body>
+</html>
